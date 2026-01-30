@@ -125,9 +125,11 @@
 <script>
     new CustomSearch({
         clear: true,
-        placeholderBreakpoint: 1024,
-        placeholderDesktop: 'Введите наименование',
-        placeholderMobile: 'Поиск',
+        placeholder: {
+            desktop: 'Поиск на ПК',
+            tablet: 'Поиск на планшете',
+            mobile: 'Поиск на телефоне',
+        }
     });
 </script>
 
