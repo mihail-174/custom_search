@@ -4,10 +4,10 @@
  * Кастомный поиск с дополнительными возможностями.
  *
  * @author      Mihail Pridannikov
- * @copyright   2021, Mihail Pridannikov
+ * @copyright   2021-2023, Mihail Pridannikov
  * @license MIT
  * @version     3.0.0
- * @release     November 2021
+ * @release     June 2023
  * @link        https://github.com/mihail-174/custom_search
  *
  */
