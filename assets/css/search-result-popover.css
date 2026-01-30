@@ -1,0 +1,19 @@
+.search-result-popover {
+    background-color: #fff;
+    box-shadow: 0 0 17px rgba(208, 208, 208, 0.28);
+}
+.search-result-popover__content {
+    display: flex;
+    flex-direction: column;
+}
+.search-result-popover__item {
+    border-bottom: 1px solid var(--color-border);
+    transition: all var(--speed-transition);
+}
+.search-result-popover__item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.search-result-popover__item.is-selected {
+    background-color: antiquewhite;
+}

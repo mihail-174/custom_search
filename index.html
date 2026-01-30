@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="assets/css/demo.css" />
     <link rel="stylesheet" href="assets/css/form.css" />
     <link rel="stylesheet" href="assets/css/form-search.css" />
+    <link rel="stylesheet" href="assets/css/search-result-popover.css" />
+    <link rel="stylesheet" href="assets/css/card-article-search-popover.css" />
+    <link rel="stylesheet" href="assets/css/card-news-search-popover.css" />
+    <link rel="stylesheet" href="assets/css/card-product-search-popover.css" />
+    <link rel="stylesheet" href="assets/css/price.css" />
     <script src="assets/js/custom_search.js"></script>
 </head>
 <body>
@@ -73,6 +78,96 @@
                                                                 <label class="form__label" for="form-search-field-name">Поиск</label>
                                                                 <input class="form__input" id="form-search-field-name" type="text" name="query" data-type="query" value="">
                                                             </div>
+                                                            <div class="form__field form__field-result">
+                                                                <div class="search-result-popover">
+                                                                    <div class="search-result-popover__content">
+                                                                        <div class="search-result-popover__item">
+
+                                                                            <div class="card-product-search-popover">
+                                                                                <div class="card-product-search-popover__image">
+                                                                                    <img class="card-product-search-popover__img" src="https://i.pinimg.com/originals/65/ed/fd/65edfdb2f3aea4de0f62072678ebb232.jpg" alt="" width="32" height="32" loading="lazy" />
+                                                                                </div>
+                                                                                <div class="card-product-search-popover__content">
+                                                                                    <div class="card-product-search-popover__name">
+                                                                                        <a href="#" class="card-product-search-popover__link">Заголовок товара</a>
+                                                                                    </div>
+                                                                                    <div class="card-product-search-popover__price">
+                                                                                        <div class="price price-current price_size_m">
+                                                                                            <div class="price__value-wrapper">
+                                                                                                <div class="price__prefix">от</div>
+                                                                                                <div class="price__value">1 000 000</div>
+                                                                                                <div class="price__suffix rouble">p</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="search-result-popover__item">
+
+                                                                            <div class="card-product-search-popover">
+                                                                                <div class="card-product-search-popover__image">
+                                                                                    <img class="card-product-search-popover__img" src="https://i.pinimg.com/originals/65/ed/fd/65edfdb2f3aea4de0f62072678ebb232.jpg" alt="" width="32" height="32" loading="lazy" />
+                                                                                </div>
+                                                                                <div class="card-product-search-popover__content">
+                                                                                    <div class="card-product-search-popover__name">
+                                                                                        <a href="#" class="card-product-search-popover__link">Тестовый заголовок товара 2</a>
+                                                                                    </div>
+                                                                                    <div class="card-product-search-popover__price">
+                                                                                        <div class="price price-specoffer price_size_m">
+                                                                                            <div class="price__value-wrapper">
+                                                                                                <div class="price__prefix">от</div>
+                                                                                                <div class="price__value">1 000 000</div>
+                                                                                                <div class="price__suffix rouble">p</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="search-result-popover__item">
+
+                                                                            <div class="card-news-search-popover">
+                                                                                <div class="card-news-search-popover__image">
+                                                                                    <img class="card-news-search-popover__img" src="https://i.pinimg.com/originals/65/ed/fd/65edfdb2f3aea4de0f62072678ebb232.jpg" alt="" width="32" height="32" loading="lazy" />
+                                                                                </div>
+                                                                                <div class="card-news-search-popover__content">
+                                                                                    <div class="card-news-search-popover__name">
+                                                                                        <a href="#" class="card-news-search-popover__link">Заголовок новости</a>
+                                                                                    </div>
+                                                                                    <div class="card-news-search-popover__description-wrapper">
+                                                                                        <div class="card-news-search-popover__description">
+                                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis dicta dolorum ducimus, eum, ex explicabo iusto laudantium minus nobis quasi, reiciendis veniam vero. Culpa dolore dolorem quis rem repudiandae.</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="search-result-popover__item">
+
+                                                                            <div class="card-article-search-popover">
+                                                                                <div class="card-article-search-popover__image">
+                                                                                    <img class="card-article-search-popover__img" src="https://i.pinimg.com/originals/65/ed/fd/65edfdb2f3aea4de0f62072678ebb232.jpg" alt="" width="32" height="32" loading="lazy" />
+                                                                                </div>
+                                                                                <div class="card-article-search-popover__content">
+                                                                                    <div class="card-article-search-popover__name">
+                                                                                        <a href="#" class="card-article-search-popover__link">Заголовок статьи</a>
+                                                                                    </div>
+                                                                                    <div class="card-article-search-popover__description-wrapper">
+                                                                                        <div class="card-article-search-popover__description">
+                                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur at dignissimos est et, laboriosam modi neque nesciunt, nihil nisi nulla odio perferendis, ratione reiciendis soluta sunt tempore ullam vel.</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div class="form__actions">
                                                             <button class="form__submit button button-primary button-m" type="submit">
@@ -88,6 +183,19 @@
                                                     </form>
                                                 </div>
                                             </div>
+
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam aliquid assumenda autem consectetur delectus deleniti eius ex laborum magni non, odit quas quibusdam quis saepe velit voluptatum. Blanditiis, neque?</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum itaque minus quasi suscipit temporibus? Distinctio dolor harum modi nesciunt nisi. Amet beatae cupiditate dolorem exercitationem in, neque. Doloribus, provident, vero.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dicta doloremque eaque eum facere fuga illo natus omnis vero? Adipisci aspernatur, consequatur excepturi harum id odio praesentium sunt temporibus tenetur!</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto doloremque expedita numquam! Beatae consequatur debitis, eaque explicabo fugit, harum illo in itaque neque nesciunt nostrum odio perferendis, quos sunt.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio eius id illum necessitatibus officiis omnis sequi totam. Aliquam corporis debitis doloremque harum illum, laboriosam, libero quam quasi quod repudiandae veniam?</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quam quo sint. Accusamus, alias aperiam exercitationem facilis nobis pariatur recusandae? Cupiditate eaque eligendi eum in quam repellat saepe, sapiente tempore.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, natus quidem. A adipisci aliquam ea est facere facilis modi nemo neque, numquam officia, possimus quae quasi quidem rerum ullam voluptatum?</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium at, consequatur culpa dolore dolores earum enim ex fugit illo illum inventore iure nulla praesentium quos suscipit tempora veritatis voluptatem!</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias autem beatae distinctio doloremque doloribus ex expedita fuga iure minima nobis numquam officia optio quas quasi, quibusdam quidem sapiente sit voluptatem?</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquam cumque deleniti, doloremque, ducimus facilis iusto quod, similique sint ullam ut vitae! At cupiditate eveniet iusto nobis nostrum odio!</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cumque esse facilis, hic incidunt laborum libero modi non, omnis optio quam recusandae. Architecto cupiditate debitis deleniti deserunt facere ipsa sit.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, amet asperiores aspernatur commodi dolorum error et excepturi, harum iure laudantium magnam odio, pariatur placeat quia tenetur? Et modi possimus vero?</p>
 
                                         </div>
                                     </div>

@@ -2,11 +2,15 @@
     flex-direction: row;
     grid-gap: 8px;
 }
-.form-search .is-button-clear .form__input {
+.form-search.is-button-clear .form__input {
     padding-right: 38px;
+}
+.form-search.is-popover-opened .form__field-result {
+    display: block;
 }
 .form-search .form__fields {
     flex: 1;
+    position: relative;
 }
 .form-search .form__label {
     display: none;
@@ -48,4 +52,13 @@
 .form-search .form__button-clear:hover::before,
 .form-search .form__button-clear:hover::after {
     background-color: var(--color-primary);
+}
+.form-search .form__field-result {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    padding-top: 8px;
 }
