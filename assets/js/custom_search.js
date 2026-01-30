@@ -6,8 +6,8 @@
  * @author      Mihail Pridannikov
  * @copyright   2021-2025, Mihail Pridannikov
  * @license MIT
- * @version     3.1.0
- * @release     May 28, 2025
+ * @version     3.2.0
+ * @release     July 29, 2025
  * @link        https://github.com/mihail-174/custom_search
  *
  */
@@ -44,7 +44,14 @@ window.CustomSearch = function(customSettings) {
     }
     let settings = this.deepMergeObjects(DEFAULT_SETTINGS, customSettings);
 
+    let countClick = 0;
+    let countItems = 0;
+
     this.init = function () {
+
+        // console.log('default', DEFAULT_SETTINGS)
+        // console.log('custom', customSettings)
+        // console.log('merge', settings)
 
         if (FORM.length) {
             FORM.forEach(form => {
@@ -58,8 +65,10 @@ window.CustomSearch = function(customSettings) {
 
                     // событие при изменении поля
                     form.querySelector('.form__input').addEventListener('input', e => this.handlerChangeOnTextField(e, form));
+                    form.querySelector('.form__input').addEventListener('keydown', e => this.handlerKeyDownOnTextField(e, form));
 
                     this.setPlaceholder(form);
+                    // this.setSettingsSearchInHeader(form);
 
                 }
             });
@@ -72,6 +81,7 @@ window.CustomSearch = function(customSettings) {
         FORM.forEach(form => {
             if (form) {
                 this.setPlaceholder(form);
+                // this.setSettingsSearchInHeader(form);
             }
         });
     }
@@ -89,7 +99,6 @@ window.CustomSearch = function(customSettings) {
         }
     }
     this.handlerChangeOnTextField = function (e, form) {
-        // добавляем кнопку очистить поле
         if (e.currentTarget.value !== '') {
             this.addButtonClear(form);
             this.addClassFilled(form);
@@ -100,7 +109,65 @@ window.CustomSearch = function(customSettings) {
             settings.mocks ? this.closePopover(form) : this.removeResults(form);
         }
 
+        this.removeSelection(form);
+        this.resetSelection();
+
+        if (settings.mocks) {
+            countItems = form.querySelectorAll('.search-result-popover__item').length;
+        }
+
     }
+    this.handlerKeyDownOnTextField = function (e, form) {
+        /*
+        * keyCode 38 - up
+        * keyCode 40 - down
+        * keyCode 13 - enter
+        * */
+        if (e.keyCode === 38) {
+            this.removeSelection(form);
+            countClick--;
+            if (countClick === 0) {
+                this.resetSelection();
+            }
+            if (countClick < 0) {
+                countClick = countItems;
+                this.addSelection(form, countClick);
+            }
+            if (countClick > 0) {
+                this.addSelection(form, countClick);
+            }
+        }
+        if (e.keyCode === 40) {
+            this.removeSelection(form);
+            countClick++;
+            if (countClick > countItems) {
+                this.resetSelection();
+            }
+            if (countClick > 0) {
+                this.addSelection(form, countClick);
+            }
+        }
+        if (e.keyCode === 13) {
+            if (countClick > 0) {
+                form.querySelectorAll('.search-result-popover__item')[countClick-1].querySelector('a').click();
+            }
+            if (countClick === 0) {
+                form.submit();
+            }
+        }
+    }
+    this.resetSelection = function () {
+        countClick = 0;
+    }
+    this.addSelection = function (form, id) {
+        form.querySelectorAll('.search-result-popover__item')[id-1].classList.add('is-selected');
+    }
+    this.removeSelection = function (form) {
+        form.querySelectorAll('.search-result-popover__item').forEach(item => {
+            item.classList.remove('is-selected')
+        });
+    }
+
     this.initSearchResult = function (form, query) {
         if (settings.mocks) {
             this.openPopover(form);
@@ -205,6 +272,7 @@ window.CustomSearch = function(customSettings) {
             })
             .then((data) => {
                 // console.log('DATA:', data);
+                countItems = data.length;
                 this.createPopover(form, data);
             })
             .catch((error) => {
